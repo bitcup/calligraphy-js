@@ -1,0 +1,43 @@
+/*bootstrap fixed navbar*/
+body {
+    min-height: 2000px;
+    padding-top: 70px;
+}
+
+[ng-cloak] {
+    display: none;
+}
+
+/*masonry stuff*/
+.m-container {
+    margin: 0 auto;
+}
+.m-container .tile {
+    margin: 0 0 25px 0;
+    /*display: none;*/
+    /*border: 1px solid black;*/
+    width: 300px;
+    float: left;
+}
+.m-container .tile.loaded {
+    display: block;
+}
+
+.img-rounded-top {
+    width: 300px;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 6px 6px 0px 0px;
+    border-radius: 6px 6px 0px 0px;
+}
+.title-box {
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    padding: 10px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px 0px 6px 6px;
+    border-radius: 0px 0px 6px 6px;
+}

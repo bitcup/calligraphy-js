@@ -1,0 +1,27 @@
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div infinite-scroll="reddit.nextPage()" infinite-scroll-disabled="reddit.busy"
+                 infinite-scroll-distance="1">
+
+                <div masonry='{"itemSelector":".tile", "gutter":25, "isFitWidth":true, "transitionDuration":"0s"}' class="m-container">
+                    <div ng-show='reddit.busy'>Loading data...</div>
+                    <div masonry-tile class="tile" ng-repeat="item in reddit.items">
+
+                        <img class="img-responsive img-rounded-top" ng-src="{{ item.src }}" alt="A masonry brick">
+
+                        <div class="title-box">
+                            <h5>{{ item.title }}</h5>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
