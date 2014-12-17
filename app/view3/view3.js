@@ -9,50 +9,38 @@ angular.module('myApp.view3', ['ngRoute', 'infinite-scroll', 'masonry'])
         });
     }])
 
-    .factory('Reddit', function ($http) {
-        var Reddit = function () {
+    .factory('CalligraphyAPI', function ($http) {
+        var CalligraphyAPI = function () {
             this.items = [];
             this.busy = false;
-            this.after = '';
+            this.done = false;
+            this.page = 0;
         };
-        Reddit.prototype.nextPage = function () {
+        CalligraphyAPI.prototype.nextPage = function () {
             if (this.busy) return;
-            var statics = [
-                'http://wall.arabiccalligraphy.com/static/lawha/detail/2013/06/dplv9ThUqQ.jpg',
-                'http://wall.arabiccalligraphy.com/static/lawha/detail/2013/06/dplv9ThUqQ.jpg',
-                'http://wall.arabiccalligraphy.com/static/lawha/detail/2012/02/Z6cdAasf7w.jpg',
-                'http://wall.arabiccalligraphy.com/static/lawha/detail/2013/06/Fo7Tobvuad.jpg',
-                'http://wall.arabiccalligraphy.com/static/lawha/detail/2013/02/v7KPd8rUpI.jpg',
-                'http://wall.arabiccalligraphy.com/static/lawha/detail/2012/02/SD2me0GQM9.jpg',
-                'http://www.arabiccalligraphy.com/static/gallery/slide/yadu.png',
-                'http://www.arabiccalligraphy.com/static/gallery/slide/ta3allam.png',
-                'http://www.arabiccalligraphy.com/static/gallery/slide/af3al2.png',
-            ];
-            function genBrick() {
-                //var width = ~~(Math.random() * 300) + 100;
-                //var height = ~~(Math.random() * 300) + 200;
-                //return 'http://placehold.it/' + 350 + 'x' + height;
-                var index = ~~(Math.random() * statics.length);
-                return statics[index];
-            }
-
+            console.log('next page = ' + this.page);
             this.busy = true;
-
-            var url = "http://api.reddit.com/hot?after=" + this.after + "&jsonp=JSON_CALLBACK";
-            $http.jsonp(url).success(function (data) {
-                var items = data.data.children;
-                for (var i = 0; i < items.length - 20; i++) {
-                    this.items.push({'src': genBrick(), 'title': '"' + items[i].data.title + '"'});
+            //var url = "http://localhost:8080/api/v1.0/lawhats?page=" + this.page + "&size=20&sort=dateAdded,desc&jsonp=JSON_CALLBACK";
+            var url = "http://localhost:8080/api/v1.0/lawhats?page=" + this.page + "&size=10&sort=dateAdded,desc";
+            $http.get(url).success(function (data) {
+                var lawhat = data.content;
+                if (lawhat.length == 0) {
+                    this.done = true;
+                } else {
+                    for (var i = 0; i < lawhat.length; i++) {
+                        this.items.push({'src': lawhat[i].imgSrc, 'title': '"' + lawhat[i].name + '"'});
+                    }
+                    this.page += 1;
+                    this.busy = false;
                 }
-                this.busy = false;
             }.bind(this));
         };
-        return Reddit;
+        return CalligraphyAPI;
     })
 
 
-    .controller('View3Ctrl', function ($scope, Reddit) {
-        $scope.reddit = new Reddit();
+    .controller('View3Ctrl', function ($scope, CalligraphyAPI) {
+        $scope.api = new CalligraphyAPI();
     })
 
 ;
