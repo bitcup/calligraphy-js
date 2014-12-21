@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module('myApp.view3', ['ngRoute', 'infinite-scroll', 'masonry'])
+angular.module('myApp.wall', ['ngRoute', 'infinite-scroll', 'masonry'])
 
     .config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.when('/view3', {
-            templateUrl: 'view3/view3.html',
-            controller: 'View3Ctrl'
+        $routeProvider.when('/wall', {
+            templateUrl: 'views/wall/wall.html',
+            controller: 'WallCtrl'
         });
     }])
 
@@ -28,7 +28,7 @@ angular.module('myApp.view3', ['ngRoute', 'infinite-scroll', 'masonry'])
                     this.done = true;
                 } else {
                     for (var i = 0; i < lawhat.length; i++) {
-                        this.items.push({'src': lawhat[i].imgSrc, 'title': '"' + lawhat[i].name + '"'});
+                        this.items.push(lawhat[i]);
                     }
                     this.page += 1;
                     this.busy = false;
@@ -39,7 +39,7 @@ angular.module('myApp.view3', ['ngRoute', 'infinite-scroll', 'masonry'])
     })
 
 
-    .controller('View3Ctrl', function ($scope, CalligraphyAPI) {
+    .controller('WallCtrl', function ($scope, CalligraphyAPI) {
         $scope.api = new CalligraphyAPI();
     })
 

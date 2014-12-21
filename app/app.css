@@ -11,6 +11,7 @@ body {
 /*masonry stuff*/
 .m-container {
     margin: 0 auto;
+    overflow: auto;
 }
 .m-container .tile {
     margin: 0 0 25px 0;
