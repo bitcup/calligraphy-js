@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.mokhtar', ['ngRoute'])
+angular.module('myApp.mokhtar', ['ngRoute', 'infinite-scroll', 'masonry'])
 
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/mokhtar', {
@@ -9,7 +9,8 @@ angular.module('myApp.mokhtar', ['ngRoute'])
         });
     }])
 
-    .controller('MokhtarCtrl', function ($scope) {
+    .controller('MokhtarCtrl', function ($scope, CalligraphyAPI) {
+        $scope.api = new CalligraphyAPI();
     })
 
 ;

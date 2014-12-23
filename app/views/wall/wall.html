@@ -3,35 +3,47 @@
     <div class="row">
         <div class="col-md-12">
 
-            <div infinite-scroll="api.nextPage()"
+            <div infinite-scroll="api.nextPage('WALL')"
                  infinite-scroll-distance="1"
                  infinite-scroll-disabled="api.done">
 
                 <!--<div masonry='{"itemSelector":".tile", "gutter":25, "isFitWidth":true, "transitionDuration":"0s", "containerStyle":"{position: \"relative\"}"}'-->
-                <div masonry='{"itemSelector":".tile", "gutter":25, "isFitWidth":true, "transitionDuration":"0s"}' class="m-container">
+                <div masonry='{"itemSelector":".tile", "gutter":25, "isFitWidth":true, "transitionDuration":"0s"}'
+                     class="m-container">
                     <div ng-show="api.busy">Loading data...</div>
                     <!-- start: one tile -->
-                    <div masonry-tile class="tile" ng-repeat="item in api.items">
-                        <img class="img-responsive img-rounded-top" ng-src="{{ item.imgSrc }}" alt="A masonry brick">
-                        <div class="title-box">
+                    <div masonry-tile class="tile img-rounded" ng-repeat="item in api.items">
+                        <img class="tile-img img-responsive" ng-src="{{ item.imgSrc }}" alt="A masonry brick">
+                        <div class="tile-info">
                             <div class="pull-left">
-                                <h5>{{ item.name }}</h5>
-                                <h5>{{ item.artist }}</h5>
+                                {{ item.name }}<br>
+                                {{ item.artist }}
                             </div>
                             <div class="pull-right" dir="rtl">
-                                <h5>{{ item.nameAr }}</h5>
-                                <h5>{{ item.artistAr }}</h5>
+                                {{ item.nameAr }}<br>
+                                {{ item.artistAr }}
                             </div>
                             <div class="clearfix"></div>
                         </div>
-                    </div><!-- end: one tile -->
+                        <div class="tile-tags">
+                            <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>&nbsp;
+                            <span ng-repeat="tag in item.tags">
+                                <a href="">{{ tag }}</a>{{$last ? '' : ', '}}
+                            </span>
+                        </div>
+                    </div>
+                    <!-- end: one tile -->
                     <div class="clearfix">bottom</div>
-                </div><!-- end: masonry -->
+                </div>
+                <!-- end: masonry -->
 
-            </div><!-- end: infinite scroll -->
+            </div>
+            <!-- end: infinite scroll -->
 
-        </div><!-- end column-->
-    </div><!-- end row -->
+        </div>
+        <!-- end column-->
+    </div>
+    <!-- end row -->
 
     <div class="row">
         <div class="col-md-12">

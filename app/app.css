@@ -15,30 +15,27 @@ body {
 }
 .m-container .tile {
     margin: 0 0 25px 0;
-    /*display: none;*/
-    /*border: 1px solid black;*/
     width: 300px;
     float: left;
+    padding: 15px;
+    background: #ffffff;
 }
 .m-container .tile.loaded {
     display: block;
 }
-
-.img-rounded-top {
+.tile-img {
     width: 300px;
+    padding-bottom: 15px;
+}
+.tile-info {
+    padding-bottom: 15px;
+}
+.tile-tags {
+    padding-top: 15px;
     border-top: 1px solid #ddd;
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    -moz-border-radius: 0px;
-    -webkit-border-radius: 6px 6px 0px 0px;
-    border-radius: 6px 6px 0px 0px;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
-.title-box {
-    border-bottom: 1px solid #ddd;
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    padding: 10px;
-    -moz-border-radius: 0px;
-    -webkit-border-radius: 0px 0px 6px 6px;
-    border-radius: 0px 0px 6px 6px;
-}
+
