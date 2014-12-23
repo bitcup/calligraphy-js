@@ -17,7 +17,7 @@ body {
     margin: 0 0 25px 0;
     width: 300px;
     float: left;
-    padding: 15px;
+    padding: 10px;
     background: #ffffff;
 }
 .m-container .tile.loaded {
@@ -25,17 +25,17 @@ body {
 }
 .tile-img {
     width: 300px;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
 }
 .tile-info {
-    padding-bottom: 15px;
+    padding-bottom: 10px;
 }
 .tile-tags {
-    padding-top: 15px;
+    padding-top: 10px;
     border-top: 1px solid #ddd;
-    margin-left: -15px;
-    margin-right: -15px;
-    padding-left: 15px;
-    padding-right: 15px;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 

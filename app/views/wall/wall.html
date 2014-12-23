@@ -3,11 +3,10 @@
     <div class="row">
         <div class="col-md-12">
 
-            <div infinite-scroll="api.nextPage('WALL')"
+            <div infinite-scroll="api.nextPage('{{type}}', '{{tag}}')"
                  infinite-scroll-distance="1"
                  infinite-scroll-disabled="api.done">
 
-                <!--<div masonry='{"itemSelector":".tile", "gutter":25, "isFitWidth":true, "transitionDuration":"0s", "containerStyle":"{position: \"relative\"}"}'-->
                 <div masonry='{"itemSelector":".tile", "gutter":25, "isFitWidth":true, "transitionDuration":"0s"}'
                      class="m-container">
                     <div ng-show="api.busy">Loading data...</div>
@@ -28,12 +27,12 @@
                         <div class="tile-tags">
                             <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>&nbsp;
                             <span ng-repeat="tag in item.tags">
-                                <a href="">{{ tag }}</a>{{$last ? '' : ', '}}
+                                <a href="#/wall/{{tag}}">{{ tag }}</a>{{$last ? '' : ', '}}
                             </span>
                         </div>
                     </div>
                     <!-- end: one tile -->
-                    <div class="clearfix">bottom</div>
+                    <div class="clearfix">&nbsp;</div>
                 </div>
                 <!-- end: masonry -->
 

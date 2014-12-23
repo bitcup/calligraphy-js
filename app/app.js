@@ -26,7 +26,7 @@ angular.module('myApp', [
             console.log('next page = ' + this.page);
             this.busy = true;
             var url = "http://localhost:8080/api/v1.0/lawhats/type/" + type;
-            if (tag != null) {
+            if (tag) {
                 url += "/tag/" + tag;
             }
             url += "?page=" + this.page + "&size=10&sort=dateAdded,desc";
