@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.wall', ['ngRoute', 'infinite-scroll', 'masonry'])
+angular.module('calligraphyApp.wall', ['ngRoute', 'infinite-scroll', 'masonry'])
 
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/wall', {
@@ -12,7 +12,10 @@ angular.module('myApp.wall', ['ngRoute', 'infinite-scroll', 'masonry'])
         });
     }])
 
-    .controller('WallCtrl', function ($scope, $routeParams, CalligraphyAPI) {
+    .controller('WallCtrl', function ($scope, $routeParams, PageTitle, MetaInfo, CalligraphyAPI) {
+        PageTitle.setTitle('Arabic Calligraphy - Wall');
+        MetaInfo.setMetaDescription("This is wall");
+
         $scope.api = new CalligraphyAPI();
         $scope.type = 'WALL';
         $scope.tag = $routeParams.tag;

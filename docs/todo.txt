@@ -1,0 +1,13 @@
+- spinner for loading pages
+    - after page loads, scroll to top
+- finish tile:
+    - artist + title in EN, AR
+- re-use html for displaying lawhat on all gallery pages (directive?)
+- lowercase tag in url
+- pattern for bg
+- logo
+- random page(s) for home
+- re-org code to allow for partials/reusable html snippets
+- meta and title generator in angular
+- load images later (for slower connections)
+    - need to store w/h in ES?

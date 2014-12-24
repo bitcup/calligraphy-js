@@ -27,7 +27,7 @@
                         <div class="tile-tags">
                             <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>&nbsp;
                             <span ng-repeat="tag in item.tags">
-                                <a href="#/wall/{{tag}}">{{ tag }}</a>{{$last ? '' : ', '}}
+                                <a href="#/wall/{{tag | lowercase}}">{{ tag }}</a>{{$last ? '' : ', '}}
                             </span>
                         </div>
                     </div>

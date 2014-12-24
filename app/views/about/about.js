@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.what', ['ngRoute'])
+angular.module('calligraphyApp.what', ['ngRoute'])
 
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/about', {
@@ -9,7 +9,10 @@ angular.module('myApp.what', ['ngRoute'])
         });
     }])
 
-    .controller('AboutCtrl', function ($scope) {
+    .controller('AboutCtrl', function ($scope, PageTitle, MetaInfo) {
+        PageTitle.setTitle('Arabic Calligraphy - About');
+        MetaInfo.setMetaDescription("This is about");
+
     })
 
 ;

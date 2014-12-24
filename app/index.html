@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <!--[if lt IE 7]>
-<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<html lang="en" ng-app="calligraphyApp" class="no-js lt-ie9 lt-ie8 lt-ie7" ng-controller="MainCtrl"> <![endif]-->
 <!--[if IE 7]>
-<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<html lang="en" ng-app="calligraphyApp" class="no-js lt-ie9 lt-ie8" ng-controller="MainCtrl"> <![endif]-->
 <!--[if IE 8]>
-<html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<html lang="en" ng-app="calligraphyApp" class="no-js lt-ie9" ng-controller="MainCtrl"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<html lang="en" ng-app="calligraphyApp" class="no-js" ng-controller="MainCtrl"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Arabic Calligraphy</title>
-    <meta name="description" content="">
+
+    <title ng-bind="pageTitle.title()"></title>
+
+    <meta name="description" content="{{ metaInfo.metaDescription() }}">
+    <meta name="keywords" content="{{ metaInfo.metaKeywords() }}">
+
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     <!--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">-->
@@ -33,7 +37,7 @@
 <![endif]-->
 
 <!-- Fixed navbar -->
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="HeaderCtrl">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
@@ -69,7 +73,7 @@
     </div>
 </nav>
 
-<div ng-view></div>
+<div class="ng-view" autoscroll="true"></div>
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/jquery-bridget/jquery.bridget.js"></script>
@@ -88,6 +92,12 @@
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/angular-masonry-directive/src/angular-masonry-directive.js"></script>
 
+<script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- components -->
+<script src="components/services.js"></script>
+<script src="components/directives.js"></script>
 <script src="app.js"></script>
 
 <!-- views -->
@@ -96,9 +106,6 @@
 <script src="views/mokhtar/mokhtar.js"></script>
 <script src="views/wall/wall.js"></script>
 <script src="views/about/about.js"></script>
-
-<script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 </body>
 </html>

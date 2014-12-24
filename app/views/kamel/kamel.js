@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.kamel', ['ngRoute'])
+angular.module('calligraphyApp.kamel', ['ngRoute'])
 
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/kamel', {
@@ -9,7 +9,10 @@ angular.module('myApp.kamel', ['ngRoute'])
         });
     }])
 
-    .controller('KamelCtrl', function ($scope) {
+    .controller('KamelCtrl', function ($scope, PageTitle, MetaInfo) {
+        PageTitle.setTitle('Arabic Calligraphy - Kamel El-Baba');
+        MetaInfo.setMetaDescription("This is kamel");
+
     })
 
 ;

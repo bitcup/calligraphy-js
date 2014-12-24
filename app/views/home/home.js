@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.home', ['ngRoute'])
+angular.module('calligraphyApp.home', ['ngRoute'])
 
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/home', {
@@ -9,7 +9,10 @@ angular.module('myApp.home', ['ngRoute'])
         });
     }])
 
-    .controller('HomeCtrl', function ($scope) {
+    .controller('HomeCtrl', function ($scope, PageTitle, MetaInfo) {
+        PageTitle.setTitle('Arabic Calligraphy - Home');
+        MetaInfo.setMetaDescription("This is home");
+
     })
 
 ;
