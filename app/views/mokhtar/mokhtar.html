@@ -2,36 +2,9 @@
 
     <div class="row">
         <div class="col-md-12">
-
-            <div infinite-scroll="api.nextPage('MOKHTAR')"
-                 infinite-scroll-distance="1"
-                 infinite-scroll-disabled="api.done">
-
-                <div masonry='{"itemSelector":".tile", "gutter":25, "isFitWidth":true, "transitionDuration":"0s"}' class="m-container">
-                    <div ng-show="api.busy">Loading data...</div>
-                    <!-- start: one tile -->
-                    <div masonry-tile class="tile" ng-repeat="item in api.items">
-                        <img class="img-responsive img-rounded-top" ng-src="{{ item.imgSrc }}" alt="A masonry brick">
-                        <div class="title-box">
-                            <div class="pull-left">
-                                <h5>{{ item.name }}</h5>
-                                <h5>{{ item.artist }}</h5>
-                            </div>
-                            <div class="pull-right" dir="rtl">
-                                <h5>{{ item.nameAr }}</h5>
-                                <h5>{{ item.artistAr }}</h5>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div><!-- end: one tile -->
-                    <div class="clearfix">bottom</div>
-                </div><!-- end: masonry -->
-
-            </div><!-- end: infinite scroll -->
-
-
-        </div><!-- end column-->
-    </div><!-- end row -->
+            <lawha-tile></lawha-tile>
+        </div>
+    </div>
 
     <div class="row">
         <div class="col-md-12">

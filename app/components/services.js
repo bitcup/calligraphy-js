@@ -44,19 +44,21 @@ angular.module('calligraphyServices', [])
     })
 
     .factory('CalligraphyAPI', function ($http, $log) {
-        var CalligraphyAPI = function () {
+        var CalligraphyAPI = function (type, tag) {
+            this.type = type;
+            this.tag = tag;
             this.items = [];
             this.busy = false;
             this.done = false;
             this.page = 0;
         };
-        CalligraphyAPI.prototype.nextPage = function (type, tag) {
+        CalligraphyAPI.prototype.nextPage = function () {
             if (this.busy) return;
             console.log('next page = ' + this.page);
             this.busy = true;
-            var url = "http://localhost:8080/api/v1.0/lawhats/type/" + type;
-            if (tag) {
-                url += "/tag/" + tag;
+            var url = "http://localhost:8080/api/v1.0/lawhats/type/" + this.type;
+            if (this.tag) {
+                url += "/tag/" + this.tag;
             }
             url += "?page=" + this.page + "&size=10&sort=dateAdded,desc";
             $log.info('url: ' + url);

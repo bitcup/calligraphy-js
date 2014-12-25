@@ -1,0 +1,34 @@
+<div infinite-scroll="api.nextPage()"
+     infinite-scroll-distance="1"
+     infinite-scroll-disabled="api.done">
+
+    <div masonry='{"itemSelector":".tile", "gutter":25, "isFitWidth":true, "transitionDuration":"0s"}' class="m-container">
+        <div ng-show="api.busy">Loading data...</div>
+        <!-- start: one tile -->
+        <div masonry-tile class="tile img-rounded" ng-repeat="item in api.items">
+            <img class="tile-img img-responsive" ng-src="{{ item.imgSrc }}" alt="{{ item.name }}">
+            <div class="tile-info">
+                <div class="pull-left">
+                    {{ item.name }}<br>
+                    {{ item.artist }}
+                </div>
+                <div class="pull-right" dir="rtl">
+                    {{ item.nameAr }}<br>
+                    {{ item.artistAr }}
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="tile-tags">
+                <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>&nbsp;
+                <span ng-repeat="tag in item.tags">
+                    <a href="#/{{api.type | lowercase}}/{{tag | lowercase}}">{{ tag }}</a>{{$last ? '' : ', '}}
+                </span>
+            </div>
+        </div>
+        <!-- end: one tile -->
+        <div class="clearfix">&nbsp;</div>
+    </div>
+    <!-- end: masonry -->
+
+</div>
+<!-- end: infinite scroll -->

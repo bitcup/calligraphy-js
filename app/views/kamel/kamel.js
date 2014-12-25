@@ -6,13 +6,17 @@ angular.module('calligraphyApp.kamel', ['ngRoute'])
         $routeProvider.when('/kamel', {
             templateUrl: 'views/kamel/kamel.html',
             controller: 'KamelCtrl'
+        }).when('/kamel/:tag', {
+            templateUrl: 'views/kamel/kamel.html',
+            controller: 'KamelCtrl'
         });
     }])
 
-    .controller('KamelCtrl', function ($scope, PageTitle, MetaInfo) {
+    .controller('KamelCtrl', function ($scope, $routeParams, PageTitle, MetaInfo, CalligraphyAPI) {
         PageTitle.setTitle('Arabic Calligraphy - Kamel El-Baba');
         MetaInfo.setMetaDescription("This is kamel");
 
+        $scope.api = new CalligraphyAPI('KAMEL', $routeParams.tag);
     })
 
 ;

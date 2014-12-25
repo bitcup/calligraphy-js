@@ -22,7 +22,7 @@ angular.module('calligraphyApp', [
         };
         // active menu
         $scope.isActive = function (viewLocation) {
-            return (viewLocation === $location.path());
+            return ($location.path().indexOf(viewLocation) > -1);
         };
 
         $scope.pageTitle = PageTitle;

@@ -16,9 +16,7 @@ angular.module('calligraphyApp.wall', ['ngRoute', 'infinite-scroll', 'masonry'])
         PageTitle.setTitle('Arabic Calligraphy - Wall');
         MetaInfo.setMetaDescription("This is wall");
 
-        $scope.api = new CalligraphyAPI();
-        $scope.type = 'WALL';
-        $scope.tag = $routeParams.tag;
+        $scope.api = new CalligraphyAPI('WALL', $routeParams.tag);
     })
 
 ;
