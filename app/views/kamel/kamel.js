@@ -16,7 +16,7 @@ angular.module('calligraphyApp.kamel', ['ngRoute'])
         PageTitle.setTitle('Arabic Calligraphy - Kamel El-Baba');
         MetaInfo.setMetaDescription("This is kamel");
 
-        $scope.api = new CalligraphyAPI('KAMEL', $routeParams.tag);
+        $scope.api = new CalligraphyAPI('KAMEL', $routeParams.tag, 'kamel');
     })
 
 ;

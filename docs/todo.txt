@@ -11,3 +11,6 @@
 - meta and title generator in angular
 - load images later (for slower connections)
     - need to store w/h in ES?
+- breadcrumbs
+- ads
+- spinner at bottom for loading more

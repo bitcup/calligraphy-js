@@ -3,7 +3,11 @@
      infinite-scroll-disabled="api.done">
 
     <div masonry='{"itemSelector":".tile", "gutter":25, "isFitWidth":true, "transitionDuration":"0s"}' class="m-container">
-        <div ng-show="api.busy">Loading data...</div>
+        <div ng-show="api.busy" class="text-center">
+            <button class="btn btn-lg">
+                <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Loading...
+            </button>
+        </div>
         <!-- start: one tile -->
         <div masonry-tile class="tile img-rounded" ng-repeat="item in api.items">
             <img class="tile-img img-responsive" ng-src="{{ item.imgSrc }}" alt="{{ item.name }}">
@@ -19,9 +23,9 @@
                 <div class="clearfix"></div>
             </div>
             <div class="tile-tags">
-                <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>&nbsp;
+                <span class="glyphicon glyphicon-tags small" aria-hidden="true"></span>&nbsp;&nbsp;Tags:
                 <span ng-repeat="tag in item.tags">
-                    <a href="#/{{api.type | lowercase}}/{{tag | lowercase}}">{{ tag }}</a>{{$last ? '' : ', '}}
+                    <a href="#/{{api.baseUrl | lowercase}}/{{tag | lowercase}}">{{ tag }}</a>{{$last ? '' : ', '}}
                 </span>
             </div>
         </div>
@@ -32,3 +36,10 @@
 
 </div>
 <!-- end: infinite scroll -->
+
+<div ng-hide="api.done" class="text-center">
+    <button class="btn btn-lg">
+        <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Loading...
+    </button>
+</div>
+

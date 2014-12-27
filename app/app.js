@@ -5,7 +5,6 @@ angular.module('calligraphyApp', [
     'calligraphyApp.home',
     'calligraphyApp.mokhtar',
     'calligraphyApp.kamel',
-    'calligraphyApp.wall',
     'calligraphyApp.what',
     'calligraphyServices',
     'calligraphyDirectives'

@@ -12,9 +12,10 @@ angular.module('calligraphyApp.wall', ['ngRoute', 'infinite-scroll', 'masonry'])
         });
     }])
 
-    .controller('WallCtrl', function ($scope, $routeParams, PageTitle, MetaInfo, CalligraphyAPI) {
+    .controller('WallCtrl', function ($scope, $routeParams, PageTitle, MetaInfo, CalligraphyAPI, breadcrumbs) {
         PageTitle.setTitle('Arabic Calligraphy - Wall');
         MetaInfo.setMetaDescription("This is wall");
+        $scope.breadcrumbs = breadcrumbs;
 
         $scope.api = new CalligraphyAPI('WALL', $routeParams.tag);
     })

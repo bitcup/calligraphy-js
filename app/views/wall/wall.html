@@ -1,16 +1,23 @@
 <div class="container-fluid">
 
+    <!--
     <div class="row">
         <div class="col-md-12">
-            <lawha-tile></lawha-tile>
+            <ol class="breadcrumb">
+                <li ng-repeat="breadcrumb in breadcrumbs.getAll()">
+                    <ng-switch on="$last">
+                        <span ng-switch-when="true">{{breadcrumb.name}}</span>
+                        <span ng-switch-default><a href="{{breadcrumb.path}}">{{breadcrumb.name}}</a></span>
+                    </ng-switch>
+                </li>
+            </ol>
         </div>
     </div>
+    -->
 
     <div class="row">
         <div class="col-md-12">
-            <div ng-show="api.done" class="text-center">
-                <h4>There are no more</h4>
-            </div>
+            <lawha-tile></lawha-tile>
         </div>
     </div>
 

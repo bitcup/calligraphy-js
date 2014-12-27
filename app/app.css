@@ -1,12 +1,36 @@
 /*bootstrap fixed navbar*/
 body {
     min-height: 2000px;
-    padding-top: 70px;
-    background: #dddddd;
+    padding-top: 84px;
+    /*background-color: #EEEEEE;*/
+    background: url(img/bg-callig-15-eee.png) repeat scroll 0 0 transparent;
 }
 
 [ng-cloak] {
     display: none;
+}
+
+/*center navbar*/
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+/*logo vertical centering*/
+.ac-logo {
+    margin-top: -20px;
+    margin-bottom: -16px;
+}
+
+@media (max-width: 767px) {
+    .ac-logo {
+        margin-top: -7px;
+    }
 }
 
 /*masonry stuff*/
@@ -14,23 +38,29 @@ body {
     margin: 0 auto;
     overflow: auto;
 }
+
 .m-container .tile {
     margin: 0 0 25px 0;
     width: 300px;
     float: left;
     padding: 10px;
     background: #ffffff;
+    border: 1px solid #ddd;
 }
+
 .m-container .tile.loaded {
     display: block;
 }
+
 .tile-img {
     width: 300px;
     padding-bottom: 10px;
 }
+
 .tile-info {
     padding-bottom: 10px;
 }
+
 .tile-tags {
     padding-top: 10px;
     border-top: 1px solid #ddd;
@@ -38,5 +68,29 @@ body {
     margin-right: -10px;
     padding-left: 10px;
     padding-right: 10px;
+}
+
+/*rotating spinner */
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: scale(1) rotate(0deg);
+    }
+    to {
+        transform: scale(1) rotate(360deg);
+    }
 }
 

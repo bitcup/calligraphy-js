@@ -16,7 +16,7 @@ angular.module('calligraphyApp.mokhtar', ['ngRoute', 'infinite-scroll', 'masonry
         PageTitle.setTitle('Arabic Calligraphy - Mokhtar El-Baba');
         MetaInfo.setMetaDescription("This is mokhtar");
 
-        $scope.api = new CalligraphyAPI('MOKHTAR', $routeParams.tag);
+        $scope.api = new CalligraphyAPI('MOKHTAR', $routeParams.tag, 'mokhtar');
     })
 
 ;
