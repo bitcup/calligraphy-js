@@ -2,17 +2,32 @@
      infinite-scroll-distance="1"
      infinite-scroll-disabled="api.done">
 
-    <div masonry='{"itemSelector":".tile", "gutter":25, "isFitWidth":true, "transitionDuration":"0s"}' class="m-container">
+    <div masonry='{"itemSelector":".tile", "stamp": ".stamp", "gutter":25, "isFitWidth":true, "transitionDuration":"0s"}'
+         class="m-container">
         <div ng-show="api.busy" class="text-center">
             <button class="btn btn-lg">
                 <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Loading...
             </button>
         </div>
+
+        <!--<div class="stamp well text-center">-->
+            <!--Thuluth was the medieval Islamic style of handwritten alphabet. Thuluth (Arabic: ثلث or "one-third") is-->
+            <!--written on the principle that one-third of each letter slopes. It is a large and elegant, cursive-->
+            <!--script, used in medieval times on mosque decorations. It took on some of the functions of the early Kufi-->
+            <!--script; it was used to write Surah headings, religious inscriptions, and princely titles and epigraphs.-->
+            <!--It was also used for many of the large copies of the Koran produced from the 13th century.-->
+        <!--</div>-->
+
         <!-- start: one tile -->
         <div masonry-tile class="tile img-rounded" ng-repeat="item in api.items">
-            <img class="tile-img img-responsive" ng-src="{{ item.imgSrc }}" alt="{{ item.name }}">
-            <div class="tile-info">
-                <div class="pull-left">
+
+            <!--show info-->
+            <div ng-show="item.templateUrl" class="tile-info" ng-include="item.templateUrl">foo</div>
+
+            <img ng-hide="item.templateUrl" class="tile-img img-responsive" ng-src="{{ item.imgSrc }}" alt="{{ item.name }}">
+
+            <div class="tile-info" ng-hide="item.templateUrl">
+                <div class="pull-left text-capitalize">
                     {{ item.name }}<br>
                     {{ item.artist }}
                 </div>
@@ -22,7 +37,7 @@
                 </div>
                 <div class="clearfix"></div>
             </div>
-            <div class="tile-tags">
+            <div class="tile-tags" ng-hide="item.templateUrl">
                 <span class="glyphicon glyphicon-tags small" aria-hidden="true"></span>&nbsp;&nbsp;Tags:
                 <span ng-repeat="tag in item.tags">
                     <a href="#/{{api.baseUrl | lowercase}}/{{tag | lowercase}}">{{ tag }}</a>{{$last ? '' : ', '}}

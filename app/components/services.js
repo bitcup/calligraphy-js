@@ -44,7 +44,7 @@ angular.module('calligraphyServices', [])
     })
 
     .factory('CalligraphyAPI', function ($http, $log) {
-        var CalligraphyAPI = function (type, tag, baseUrl) {
+        var CalligraphyAPI = function (type, tag, baseUrl, infoMap) {
             this.type = type;
             this.tag = tag;
             this.baseUrl = baseUrl;
@@ -52,6 +52,7 @@ angular.module('calligraphyServices', [])
             this.busy = false;
             this.done = false;
             this.page = 0;
+            this.infoMap = infoMap;
         };
         CalligraphyAPI.prototype.nextPage = function () {
             if (this.busy) return;
@@ -69,8 +70,21 @@ angular.module('calligraphyServices', [])
                     this.done = true;
                     this.busy = false;
                 } else {
-                    for (var i = 0; i < lawhat.length; i++) {
-                        this.items.push(lawhat[i]);
+                    // add tile with info url in it, if any
+                    if (this.items.length == 0) {
+                        var infoLawha = {};
+                        for (var i = 0; i < this.infoMap.length; i++) {
+                            if (this.infoMap[i].tag == this.tag) {
+                                infoLawha.templateUrl = "partials/" + this.infoMap[i].url;
+                                break;
+                            }
+                        }
+                        if (infoLawha.templateUrl) {
+                            this.items.push(infoLawha);
+                        }
+                    }
+                    for (var j = 0; j < lawhat.length; j++) {
+                        this.items.push(lawhat[j]);
                     }
                     this.page += 1;
                     this.busy = false;

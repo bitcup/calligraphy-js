@@ -3,6 +3,7 @@
 angular.module('calligraphyApp', [
     'ngRoute',
     'calligraphyApp.home',
+    'calligraphyApp.wall',
     'calligraphyApp.mokhtar',
     'calligraphyApp.kamel',
     'calligraphyApp.what',

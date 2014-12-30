@@ -1,19 +1,10 @@
 <div class="container-fluid">
 
-    <!--
-    <div class="row">
-        <div class="col-md-12">
-            <ol class="breadcrumb">
-                <li ng-repeat="breadcrumb in breadcrumbs.getAll()">
-                    <ng-switch on="$last">
-                        <span ng-switch-when="true">{{breadcrumb.name}}</span>
-                        <span ng-switch-default><a href="{{breadcrumb.path}}">{{breadcrumb.name}}</a></span>
-                    </ng-switch>
-                </li>
-            </ol>
+    <div ng-show="api.tag" class="row">
+        <div class="col-md-12 text-center text-capitalize ac-breadcrumbs">
+            <h2><a href="#/wall">The Wall</a> / {{ api.tag }}</h2>
         </div>
     </div>
-    -->
 
     <div class="row">
         <div class="col-md-12">

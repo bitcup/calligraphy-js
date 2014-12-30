@@ -5,12 +5,26 @@ body {
     /*background-color: #EEEEEE;*/
     background: url(img/bg-callig-15-eee.png) repeat scroll 0 0 transparent;
 }
+.well {
+    background: #ffffff;
+    border: 1px solid #ddd;
+}
 
 [ng-cloak] {
     display: none;
 }
 
+/*breadcrumbs*/
+.ac-breadcrumbs {
+    margin-top: -20px;
+}
+
 /*center navbar*/
+@media (max-width: 767px) {
+    .nav {
+        font-size: 18px;
+    }
+}
 .navbar .navbar-nav {
     display: inline-block;
     float: none;
@@ -29,7 +43,8 @@ body {
 
 @media (max-width: 767px) {
     .ac-logo {
-        margin-top: -7px;
+        margin-top: -5px;
+        width: 285px;
     }
 }
 
@@ -50,6 +65,10 @@ body {
 
 .m-container .tile.loaded {
     display: block;
+}
+
+.m-container .tile-info {
+    padding: 10px;
 }
 
 .tile-img {
