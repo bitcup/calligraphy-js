@@ -1,16 +1,16 @@
-- spinner for loading pages
+- spinner for loading pages [DONE]
     - after page loads, scroll to top
 - finish tile:
     - artist + title in EN, AR
-- re-use html for displaying lawhat on all gallery pages (directive?)
-- lowercase tag in url
+- re-use html for displaying lawhat on all gallery pages (directive?) [DONE]
+- lowercase tag in url [DONE]
 - pattern for bg
-- logo
+- logo [DONE]
 - random page(s) for home
-- re-org code to allow for partials/reusable html snippets
+- re-org code to allow for partials/reusable html snippets [DONE]
 - meta and title generator in angular
 - load images later (for slower connections)
     - need to store w/h in ES?
-- breadcrumbs
+- breadcrumbs [DONE]
 - ads
-- spinner at bottom for loading more
+- spinner at bottom for loading more [DONE]

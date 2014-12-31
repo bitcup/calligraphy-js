@@ -20,6 +20,8 @@ angular.module('calligraphyApp.kamel', ['ngRoute'])
             { tag: null, url: "kamel-about.html"}
         ];
         $scope.api = new CalligraphyAPI('KAMEL', $routeParams.tag, 'kamel', infoMap);
+
+        $scope.htmlReady();
     })
 
 ;

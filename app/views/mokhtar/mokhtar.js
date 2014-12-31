@@ -21,6 +21,8 @@ angular.module('calligraphyApp.mokhtar', ['ngRoute', 'infinite-scroll', 'masonry
             { tag: "hurufiyyat", url: "mokhtar-hurufiyyat.html"}
         ];
         $scope.api = new CalligraphyAPI('MOKHTAR', $routeParams.tag, 'mokhtar', infoMap);
+
+        $scope.htmlReady();
     })
 
 ;

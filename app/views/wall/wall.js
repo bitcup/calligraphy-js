@@ -28,6 +28,8 @@ angular.module('calligraphyApp.wall', ['ngRoute', 'infinite-scroll', 'masonry'])
             { tag: "farsi", url: "wall-farsi.html"}
         ];
         $scope.api = new CalligraphyAPI('WALL', $routeParams.tag, 'wall', infoMap);
+
+        $scope.htmlReady();
     })
 
 ;

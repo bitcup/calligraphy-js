@@ -13,6 +13,7 @@ angular.module('calligraphyApp.what', ['ngRoute'])
         PageTitle.setTitle('Arabic Calligraphy - About');
         MetaInfo.setMetaDescription("This is about");
 
+        $scope.htmlReady();
     })
 
 ;

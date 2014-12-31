@@ -8,9 +8,11 @@ angular.module('calligraphyApp', [
     'calligraphyApp.kamel',
     'calligraphyApp.what',
     'calligraphyServices',
-    'calligraphyDirectives'
+    'calligraphyDirectives',
+    'seo'
 ]).
     config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+        $locationProvider.hashPrefix('!');
         $routeProvider.otherwise({redirectTo: '/home'});
         //$locationProvider.html5Mode(true);
     }])

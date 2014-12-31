@@ -11,6 +11,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+    <!-- enable AJAX indexing by crawlers -->
+    <meta name="fragment" content="!" />
+
     <title ng-bind="pageTitle.title()"></title>
 
     <meta name="description" content="{{ metaInfo.metaDescription() }}">
@@ -50,15 +53,15 @@
         </div>
         <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
             <ul class="nav navbar-nav">
-                <li class="hidden-xs"><a href="#/"><img class="ac-logo" src="img/ac_logo_300.png"></a></li>
-                <li ng-class="{ active: isActive('/mokhtar')}" ng-click="updateCollapsed()"><a href="#/mokhtar">Mokhtar El-Baba</a></li>
-                <li ng-class="{ active: isActive('/kamel')}" ng-click="updateCollapsed()"><a href="#/kamel">Kamel El-Baba</a></li>
-                <li ng-class="{ active: isActive('/wall')}" ng-click="updateCollapsed()"><a href="#/wall">The Wall</a></li>
+                <li class="hidden-xs"><a href="#!/"><img class="ac-logo" src="img/ac_logo_300.png"></a></li>
+                <li ng-class="{ active: isActive('/mokhtar')}" ng-click="updateCollapsed()"><a href="#!/mokhtar">Mokhtar El-Baba</a></li>
+                <li ng-class="{ active: isActive('/kamel')}" ng-click="updateCollapsed()"><a href="#!/kamel">Kamel El-Baba</a></li>
+                <li ng-class="{ active: isActive('/wall')}" ng-click="updateCollapsed()"><a href="#!/wall">The Wall</a></li>
                 <li class="dropdown" ng-class="{ active: isActive('/about')}">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li ng-class="{ active: isActive('/about')}" ng-click="updateCollapsed()"><a href="#/about">About</a></li>
+                        <li ng-class="{ active: isActive('/about')}" ng-click="updateCollapsed()"><a href="#!/about">About</a></li>
                         <li><a href="#">Another action</a></li>
                         <li><a href="#">Something else here</a></li>
                         <li class="divider"></li>
@@ -99,6 +102,8 @@
 <!-- components -->
 <script src="components/services.js"></script>
 <script src="components/directives.js"></script>
+<script src="components/angular-seo.js"></script>
+
 <script src="app.js"></script>
 
 <!-- views -->
