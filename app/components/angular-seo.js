@@ -16,8 +16,9 @@
                 }
             ]);
     };
-    if (typeof define == 'function' && define.amd)
+    if (typeof define == 'function' && define.amd) {
         define(['angular'], getModule);
-    else
+    } else {
         getModule(angular);
+    }
 }(window, document);

@@ -19,10 +19,12 @@ var parse_qs = function (s) {
             queryString[$1] = $3;
         }
     );
+    //console.log('qs: ' + JSON.stringify(queryString));
     return queryString;
 };
 
 var renderHtml = function (url, cb) {
+    console.log('rendering '+url);
     var page = require('webpage').create();
     page.settings.loadImages = false;
     page.settings.localToRemoteUrlAccessEnabled = true;
@@ -30,9 +32,9 @@ var renderHtml = function (url, cb) {
         cb(page.content);
         page.close();
     };
-//    page.onConsoleMessage = function(msg, lineNum, sourceId) {
-//        console.log('CONSOLE: ' + msg + ' (from line #' + lineNum + ' in "' + sourceId + '")');
-//    };
+    page.onConsoleMessage = function(msg, lineNum, sourceId) {
+        console.log('CONSOLE: ' + msg + ' (from line #' + lineNum + ' in "' + sourceId + '")');
+    };
     page.onInitialized = function () {
         page.evaluate(function () {
             setTimeout(function () {

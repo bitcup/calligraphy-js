@@ -10,8 +10,12 @@ angular.module('calligraphyApp', [
     'calligraphyServices',
     'calligraphyDirectives',
     'seo'
-]).
-    config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+])
+    .constant("myConfig", {
+        "apiUrl": "http://localhost:8080"
+    })
+
+    .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
         $locationProvider.hashPrefix('!');
         $routeProvider.otherwise({redirectTo: '/home'});
         //$locationProvider.html5Mode(true);
@@ -19,8 +23,8 @@ angular.module('calligraphyApp', [
 
     .controller('MainCtrl', function ($scope, $location, PageTitle, MetaInfo) {
         // collapse fluid nav
-        $scope.updateCollapsed = function() {
-            $scope.navCollapsed=true;
+        $scope.updateCollapsed = function () {
+            $scope.navCollapsed = true;
         };
         // active menu
         $scope.isActive = function (viewLocation) {

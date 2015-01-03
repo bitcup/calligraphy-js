@@ -43,7 +43,7 @@ angular.module('calligraphyServices', [])
         };
     })
 
-    .factory('CalligraphyAPI', function ($http, $log) {
+    .factory('CalligraphyAPI', function ($http, $log, myConfig) {
         var CalligraphyAPI = function (type, tag, baseUrl, infoMap) {
             this.type = type;
             this.tag = tag;
@@ -58,7 +58,7 @@ angular.module('calligraphyServices', [])
             if (this.busy) return;
             console.log('next page = ' + this.page);
             this.busy = true;
-            var url = "http://localhost:8080/api/v1.0/lawhats/type/" + this.type;
+            var url = myConfig.apiUrl + "/api/v1.0/lawhats/type/" + this.type;
             if (this.tag) {
                 url += "/tag/" + this.tag;
             }
@@ -93,36 +93,4 @@ angular.module('calligraphyServices', [])
         };
         return CalligraphyAPI;
     })
-
-    .factory('breadcrumbs', ['$rootScope', '$location', '$log', function ($rootScope, $location, $log) {
-        var breadcrumbs = [];
-        var breadcrumbsService = {};
-
-        // we want to update breadcrumbs only when a route is actually changed
-        // as $location.path() will get updated immediatelly (even if route change fails!)
-        $rootScope.$on('$routeChangeSuccess', function (event, current) {
-
-            var pathElements = $location.path().split('/'), result = [], i;
-            var breadcrumbPath = function (index) {
-                return '/app/#/' + (pathElements.slice(0, index + 1)).join('/');
-            };
-
-            pathElements.shift();
-            for (i = 0; i < pathElements.length; i++) {
-                result.push({name: pathElements[i], path: breadcrumbPath(i)});
-            }
-
-            breadcrumbs = result;
-        });
-
-        breadcrumbsService.getAll = function () {
-            return breadcrumbs;
-        };
-
-        breadcrumbsService.getFirst = function () {
-            return breadcrumbs[0] || {};
-        };
-
-        return breadcrumbsService;
-    }])
 ;
