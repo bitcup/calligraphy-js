@@ -14,7 +14,8 @@ angular.module('calligraphyApp.wall', ['ngRoute', 'infinite-scroll', 'masonry'])
 
     .controller('WallCtrl', function ($scope, $routeParams, $log, PageTitle, MetaInfo, CalligraphyAPI) {
         PageTitle.setTitle('Arabic Calligraphy - Wall');
-        MetaInfo.setMetaDescription("This is wall");
+        MetaInfo.setMetaDescription("The wall is a curated galley of Arabic calligraphy from various artists in different styles, including traditional, modern and abstract pieces.");
+        MetaInfo.setMetaKeywords("arabic,islamic,calligraphy,art,script,font,art galleries,kamel,mokhtar,baba,el-baba,arab,muslim,artwork,graphics,middle east,culture,ethnic,calligraphic,arabic language,arabic script,arabian,allah,mohammad,mohamad,muhammad,muhamad,mohamed,wedding invitation,logo design,lebanon,tattoo,graffiti");
 
         var infoMap = [
             { tag: null, url: "wall-about.html"},

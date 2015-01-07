@@ -5,6 +5,7 @@ body {
     /*background-color: #EEEEEE;*/
     background: url(img/bg-callig-15-eee.png) repeat scroll 0 0 transparent;
 }
+
 .well {
     background: #ffffff;
     border: 1px solid #ddd;
@@ -25,6 +26,7 @@ body {
         font-size: 18px;
     }
 }
+
 .navbar .navbar-nav {
     display: inline-block;
     float: none;
@@ -37,14 +39,16 @@ body {
 
 /*logo vertical centering*/
 .ac-logo {
-    margin-top: -20px;
-    margin-bottom: -16px;
+    margin-top: -6px;
+    margin-bottom: -2px;
+    width: 225px;
 }
 
 @media (max-width: 767px) {
     .ac-logo {
-        margin-top: -5px;
-        width: 285px;
+        margin-top: -2px;
+        margin-bottom: -2px;
+        width: 225px;
     }
 }
 
@@ -111,5 +115,37 @@ body {
     to {
         transform: scale(1) rotate(360deg);
     }
+}
+
+/*iPhone < 5:*/
+@media screen and (device-aspect-ratio: 2/3) {
+    .m-container .tile {
+        width: 290px;
+    }
+    .tile-img {
+        width: 290px;
+    }
+}
+
+/*iPhone 5:*/
+@media screen and (device-aspect-ratio: 40/71) {
+    .m-container .tile {
+        width: 290px;
+    }
+    .tile-img {
+        width: 290px;
+    }
+}
+
+/*iPhone 6:*/
+@media screen and (device-aspect-ratio: 667/375) {
+}
+
+/*iPhone 6 Plus:*/
+@media screen and (device-aspect-ratio: 16/9) {
+}
+
+/*iPad:*/
+@media screen and (device-aspect-ratio: 3/4) {
 }
 

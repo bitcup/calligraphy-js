@@ -21,16 +21,17 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">-->
-    <link rel="stylesheet" href="flatly.min.css">
+    <link rel="stylesheet" href="/flatly.min.css">
 
-    <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
-    <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
-    <link rel="stylesheet" href="app.css">
-    <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+    <link rel="stylesheet" href="/bower_components/html5-boilerplate/css/normalize.css">
+    <link rel="stylesheet" href="/bower_components/html5-boilerplate/css/main.css">
+    <link rel="stylesheet" href="/app.css">
+    <script src="/bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 
     <!--<base href="/app/">-->
+    <base href="/#!">
 </head>
 <body>
 
@@ -49,19 +50,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand visible-xs" href="#"><img class="ac-logo" src="img/ac_logo_300.png"></a>
+            <a class="navbar-brand visible-xs" href="/"><img class="ac-logo" src="img/ac_logo_300.png"></a>
         </div>
         <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
             <ul class="nav navbar-nav">
-                <li class="hidden-xs"><a href="#!/"><img class="ac-logo" src="img/ac_logo_300.png"></a></li>
-                <li ng-class="{ active: isActive('/mokhtar')}" ng-click="updateCollapsed()"><a href="#!/mokhtar">Mokhtar El-Baba</a></li>
-                <li ng-class="{ active: isActive('/kamel')}" ng-click="updateCollapsed()"><a href="#!/kamel">Kamel El-Baba</a></li>
-                <li ng-class="{ active: isActive('/wall')}" ng-click="updateCollapsed()"><a href="#!/wall">The Wall</a></li>
+                <li class="hidden-xs"><a href="/"><img class="ac-logo" src="img/ac_logo_300.png"></a></li>
+                <li ng-class="{ active: isActive('/mokhtar')}" ng-click="updateCollapsed()"><a href="/mokhtar">Mokhtar El-Baba</a></li>
+                <li ng-class="{ active: isActive('/kamel')}" ng-click="updateCollapsed()"><a href="/kamel">Kamel El-Baba</a></li>
+                <li ng-class="{ active: isActive('/wall')}" ng-click="updateCollapsed()"><a href="/wall">The Wall</a></li>
                 <li class="dropdown" ng-class="{ active: isActive('/about')}">
-                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button">About
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li ng-class="{ active: isActive('/about')}" ng-click="updateCollapsed()"><a href="#!/about">About</a></li>
+                        <li ng-class="{ active: isActive('/about')}" ng-click="updateCollapsed()"><a href="/about">About</a></li>
                         <li><a href="#">Another action</a></li>
                         <li><a href="#">Something else here</a></li>
                         <li class="divider"></li>

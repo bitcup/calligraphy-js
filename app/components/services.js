@@ -31,14 +31,8 @@ angular.module('calligraphyServices', [])
             setMetaDescription: function (newMetaDescription) {
                 metaDescription = newMetaDescription;
             },
-            appendMetaKeywords: function (newKeywords) {
-                for (var key in newKeywords) {
-                    if (metaKeywords === '') {
-                        metaKeywords += newKeywords[key].name;
-                    } else {
-                        metaKeywords += ', ' + newKeywords[key].name;
-                    }
-                }
+            setMetaKeywords: function (newMetaKeywords) {
+                metaKeywords = newMetaKeywords;
             }
         };
     })

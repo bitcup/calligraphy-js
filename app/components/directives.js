@@ -58,7 +58,7 @@ angular.module('calligraphyDirectives', [])
         return {
             restrict: 'E',
             scope: false,
-            templateUrl: 'partials/tile.html'
+            templateUrl: 'partials/tile.html?i=1'
         }
     })
 

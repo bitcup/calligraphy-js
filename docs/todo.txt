@@ -14,3 +14,7 @@
 - breadcrumbs [DONE]
 - ads
 - spinner at bottom for loading more [DONE]
+- sitemeap
+- nginx
+    -- redirect urls with '/' at end to remove '/'
+    -- redirect old site urls to new urls
