@@ -32,7 +32,7 @@
             <div class="tile-tags" ng-hide="item.templateUrl">
                 <span class="glyphicon glyphicon-tags small"></span>&nbsp;&nbsp;Tags:
                 <span ng-repeat="tag in item.tags">
-                    <a href="/{{api.baseUrl | lowercase}}/{{tag | lowercase}}">{{ tag }}</a>{{$last ? '' : ', '}}
+                    <a href="#!/{{api.baseUrl | lowercase}}/{{tag | lowercase}}">{{ tag }}</a>{{$last ? '' : ', '}}
                 </span>
             </div>
         </div>

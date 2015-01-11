@@ -18,7 +18,7 @@ angular.module('calligraphyApp', [
     .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
         $locationProvider.hashPrefix('!');
         $routeProvider.otherwise({redirectTo: '/home'});
-        $locationProvider.html5Mode(true);
+        $locationProvider.html5Mode(false);
     }])
 
     .controller('MainCtrl', function ($scope, $location, PageTitle, MetaInfo) {
